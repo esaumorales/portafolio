@@ -1,0 +1,20 @@
+[
+    {
+        "title": "Lenguajes",
+        "languages": [
+            "Jsx",
+            "Javascript",
+            "Html",
+            "Css",
+            "Tailwind"
+        ]
+    },
+    {
+        "title": "Framework",
+        "languages": [
+            "Angular",
+            "React",
+            "Astro"
+        ]
+    }
+]
