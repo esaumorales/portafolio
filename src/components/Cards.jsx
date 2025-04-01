@@ -3,7 +3,7 @@ import localFallbackImage from '@Assets/img/error404.png';
 
 export default function Cards() {
   return (
-    <div className='flex flex-wrap gap-4'>
+    <div className='flex flex-wrap justify-center md:justify-start gap-4 px-4 md:px-0'>
       {data.slice(0, 4).map((card) => (
         <Card key={card.nProject} card={card} />
       ))}
@@ -26,7 +26,7 @@ function Card({ card }) {
   return (
     <div
       key={card.nProject}
-      className='max-w-[220px] max-h-[500px] border border-gray-500 dark:border-primary flex flex-col'>
+      className='w-full sm:w-[220px] max-h-[500px] border border-gray-500 dark:border-primary flex flex-col'>
       <div className='w-full h-32 border-y border-x-none border-gray-500 dark:border-primary'>
         <img
           src={previewImage}
@@ -36,11 +36,11 @@ function Card({ card }) {
             console.warn(
               `Error al cargar la imagen de ${card.imgUrl}, usando imagen local.`
             );
-            e.target.src = localFallbackImage; // Usa la imagen de respaldo local
+            e.target.src = localFallbackImage;
           }}
         />
       </div>
-      <div className='border-y border-x-none border-gray-500 dark:border-primary text-primary text-sm p-2 overflow-y-auto max-h-[150px]'>
+      <div className='border-y border-x-none border-gray-500 dark:border-primary text-primary text-xs md:text-sm p-2 overflow-y-auto max-h-[150px]'>
         <div className='flex flex-wrap gap-2'>
           {card.languages.map((language) => (
             <p
@@ -53,18 +53,22 @@ function Card({ card }) {
       </div>
       <div className='flex flex-col flex-grow'>
         <div className='p-2'>
-          <h3 className='text-gray-500 dark:text-white text-xl truncate'>{card.nProject}</h3>
-          <p className='text-primary text-sm break-words'>{card.description}</p>
+          <h3 className='text-gray-500 dark:text-white text-lg md:text-xl truncate'>
+            {card.nProject}
+          </h3>
+          <p className='text-primary text-xs md:text-sm break-words'>
+            {card.description}
+          </p>
         </div>
         <div className='flex gap-4 justify-center p-2'>
           <a href={card.buttonDemo} target='_blank' rel='noopener noreferrer'>
-            <button className='border border-secondary hover:bg-secondary/10 px-1 text-gray-500 dark:text-white'>
+            <button className='border border-secondary hover:bg-secondary/10 px-1 text-gray-500 dark:text-white text-sm'>
               Live{' '}
               <span className='before:content-["<~>"] before:text-gray-500 dark:before:text-white'></span>
             </button>
           </a>
           <a href={card.buttonGit} target='_blank' rel='noopener noreferrer'>
-            <button className='border border-primary hover:bg-secondary/10 px-1 text-primary'>
+            <button className='border border-primary hover:bg-secondary/10 px-1 text-primary text-sm'>
               Git{' '}
               <span className='before:content-[">="] before:text-primary'></span>
             </button>
@@ -74,5 +78,3 @@ function Card({ card }) {
     </div>
   );
 }
-
-// Componente principal que muestra las tarjetas
