@@ -1,4 +1,4 @@
-# Portfolio - Esau Morales 🚀
+# Portafolio - Esau Morales 🚀
 
 ¡Hola! Este es mi portfolio personal donde muestro mis proyectos y habilidades como desarrollador frontend.
 
